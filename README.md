@@ -11,3 +11,4 @@ Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (con
 * `[] == empty`
 * `[1, 2, 3] == 1:(2:(3:[]))) == 1:2:3:[]`
 * Commonly seen: `xs` for a function with signature e.g. `[x] -> Int`, can take it to read as the plural of `x`
+* `++` is equivalent to LISP `append`

@@ -8,5 +8,10 @@ reverseList :: [x] -> [x]
 reverseList [] = []
 reverseList (x:xs) = reverseList xs ++ [x]
 
+{- Design a function which twice duplicates list elements -}
+double :: [x] -> [x]
+double [] = []
+double (x:xs) = [x,x] : double xs
+
 main :: IO()
 main =  putStrLn "_"
