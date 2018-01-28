@@ -9,4 +9,4 @@ factorial n | n == 0 = 1
             | otherwise = factorial(n-1) * n
 
 main :: IO()
-main = mapM_ (putStrLn . fizz) [1 .. 100]
+main = putStrLn "_"
