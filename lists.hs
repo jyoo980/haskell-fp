@@ -3,9 +3,10 @@ getLength :: [x] -> Int
 getLength [] = 0
 getLength (_:xs) = 1 + getLength xs
 
-{- Design a function which compute the sum of elements in a list -}
-getSum :: [x] -> Int
-getSum x = foldr sum 0 x
+{- Design a function which reverses a list -}
+reverseList :: [x] -> [x]
+reverseList [] = []
+reverseList (x:xs) = reverseList xs ++ [x]
 
 main :: IO()
 main =  putStrLn "_"
