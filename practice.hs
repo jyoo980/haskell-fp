@@ -4,6 +4,9 @@ fizz n | n `mod` 15 == 0  = "FizzBuzz"
        | n `mod` 5  == 0  = "Buzz"
        | otherwise = show n
 
+factorial :: Int -> Int
+factorial n | n == 0 = 1
+            | otherwise = factorial(n-1) * n
 
- 
 main :: IO()
+main = mapM_ (putStrLn . fizz) [1 .. 100]
