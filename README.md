@@ -12,7 +12,7 @@ draw upon my experience with Racket, and some of the code written here will be t
     addToAll [] n = 0
     addToAll (x:xs) n = (x + n) : addToAll xs n
 ```
-The type signature for `addToAll` would be `addToAll :: [Int] -> Int -> [Int]`, equivalent to stating: first plug in the value for `[Int]`, then plug in what you want to add to each: `[Int]`, then produce the new list: `[Int]`
+The type signature for `addToAll` would be `addToAll :: [Int] -> Int -> [Int]`, equivalent to stating: first plug in the value for `[Int]`, then plug in what you want to add to each: `Int`, then produce the new list: `[Int]`
 
 ## Lists
 Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (cons 2 (cons 3 empty)))` or `(list 1 2 3)` in LISP and LISP-like languages. Below is some useful syntax:
