@@ -47,6 +47,11 @@ allGreaterThan :: [Int] -> Int -> Bool
 allGreaterThan [] _ = True
 allGreaterThan (x:xs) n = 
     (x > n) && allGreaterThan xs n 
+    
+{- Design a function which flattens a list of integers -}
+flatten' :: (Num x) => [[x]] -> [x]
+flatten' [] = []
+flatten' (x:xs) = x ++ flatten' xs
 
 main :: IO()
 main =  putStrLn "_"
