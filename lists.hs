@@ -53,5 +53,8 @@ flatten' :: (Num x) => [[x]] -> [x]
 flatten' [] = []
 flatten' (x:xs) = x ++ flatten' xs
 
+{- Design a function which produces the last element of a list of integers -}
+lastElem :: (Num x) => [x] -> x
+
 main :: IO()
 main =  putStrLn "_"
