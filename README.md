@@ -26,6 +26,7 @@ Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (con
 ## Questions to address
 
 1. I've noticed that the following code
+
     ```Haskell
         prod [] = 1
         prod (x:xs) = x * prod xs
@@ -45,3 +46,18 @@ Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (con
 ```
 
 The two calls to `map` produce the same result, but the second call made use of a λ-abstraction. Notice that there is no need to define the function which is passed in as argument to map, in the case of this λ-abstraction. 
+
+* <strong>β-reduction</strong>: stemming from the λ-calculus, a β-reduction is the process of calculating a result from the application of a function to an expression. Take for example the following λ-expression, where x is 4.
+
+```Haskell
+    (\x -> (x * 2) / 12 + x)
+    (\x -> (4 * 2) / 12 + 4)
+```
+
+The second line of the code above is where the β-reduction occured, where all occurances of `x` were replaced with the value `4`, reducing the expression.
+
+* <strong>η-conversion</strong>: η-conversion (eta-conversion is where the addition or removal of an abstraction occurs in a function. This is often used to eliminate redundant λ-abstraction. Take the following for example:
+
+```Haskell
+    
+```
