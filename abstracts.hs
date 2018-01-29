@@ -4,6 +4,10 @@ myFoldr :: (x -> y -> y) -> y -> [x] -> y
 myFoldr _ b [] = b
 myFoldr f b (x:xs) = f x (myFoldr f b xs)
 
+{- Foldl, complains about duplicate type signatures -}
+myFoldl _ b [] = b
+myFoldl f b (x:xs) = myFoldl f (f x b) xs
+
 myMap :: (x -> y) -> [x] -> [y]
 myMap _ [] = []
 myMap f (x:xs) = f x : myMap f xs
