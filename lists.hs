@@ -48,15 +48,5 @@ allGreaterThan [] _ = True
 allGreaterThan (x:xs) n = 
     (x > n) && allGreaterThan xs n 
 
-{- Design foldr -}
-myFold :: (x -> y -> y) -> y -> [x] -> y
-myFold f b [] = b
-myFold f b (x:xs) = f x (myFold f b xs)
-
-{- Design map -}
-myMap :: (x -> y) -> [x] -> [y]
-myMap f [] = []
-myMap f (x:xs) = f x : myMap xs
-
 main :: IO()
 main =  putStrLn "_"
