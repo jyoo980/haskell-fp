@@ -55,6 +55,11 @@ flatten' (x:xs) = x ++ flatten' xs
 
 {- Design a function which produces the last element of a list of integers -}
 lastElem :: (Num x) => [x] -> x
+lastElem [] = error "List is empty"
+lastElem (x:xs) =
+  if xs == []
+    then x
+    else lastElem xs
 
 main :: IO()
 main =  putStrLn "_"
