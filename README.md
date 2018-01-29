@@ -12,3 +12,12 @@ Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (con
 * `[1, 2, 3] == 1:(2:(3:[]))) == 1:2:3:[]`
 * Commonly seen: `xs` for a function with signature e.g. `[x] -> Int`, can take it to read as the plural of `x`
 * `++` is equivalent to LISP `append`
+
+## Questions to address
+
+1. I've noticed that the following code
+    ```Haskell
+        prod [] = 1
+        prod (x:xs) = x * prod xs
+    ```
+    will not compile if I specify the type signature of `prod` to be `[x] -> x`, but will compile when I specify the type signature to be `[Int] -> Int`. Why is this the case? Is `x` not a more general term for a type? Does `ghci` prefer if one is as specific as possible with types?
