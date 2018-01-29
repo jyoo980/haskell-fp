@@ -37,9 +37,26 @@ fibNum n
 fib :: Int -> [Int]
 fib n = map fibNum [1..n]
 
+{- Design a function which adds n to each element of a list  -}
 addToAll :: [Int] -> Int -> [Int]
-addToAll [] n = []
+addToAll [] _ = []
 addToAll (x:xs) n = (x + n) : addToAll xs n
+
+{- Design a function which produce true if all numbers are greater than n -}
+allGreaterThan :: [Int] -> Int -> Bool
+allGreaterThan [] _ = True
+allGreaterThan (x:xs) n = 
+    (x > n) && allGreaterThan xs n 
+
+{- Design foldr -}
+myFold :: (x -> y -> y) -> y -> [x] -> y
+myFold f b [] = b
+myFold f b (x:xs) = f x (myFold f b xs)
+
+{- Design map -}
+myMap :: (x -> y) -> [x] -> [y]
+myMap f [] = []
+myMap f (x:xs) = f x : myMap xs
 
 main :: IO()
 main =  putStrLn "_"

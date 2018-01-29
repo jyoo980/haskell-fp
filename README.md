@@ -63,4 +63,4 @@ The second line of the code above is where the β-reduction occured, where all o
     map id [1..10]
 ```
 
-The conversion of the λ-abstraction into an equivalent function is an example of η-reduction, while moving from `id` to `(\x -> x)` would be an example of `η-abstraction`.
+The conversion of the λ-abstraction into an equivalent function is an example of η-reduction, while moving from `id` to `(\x -> x)` would be an example of η-abstraction.
