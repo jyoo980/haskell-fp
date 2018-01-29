@@ -17,11 +17,18 @@ myFilter pred (x:xs) =
             myFilter pred xs
 
 andMap :: (x -> Bool) -> [x] -> Bool
-myFilter _ [] = True
-myFilter pred (x:xs) =
-    pred x && myFilter pred xs
+andMap _ [] = True
+andMap pred (x:xs) =
+    pred x && andMap pred xs
 
 orMap :: (x -> Bool) -> [x] -> Bool
 orMap _ [] = False
 orMap pred (x:xs) =
     pred x || orMap pred xs
+
+buildList :: (Int -> y) -> Int -> [y]
+buildList f n =
+    if n <= 0
+        then []
+        else
+            buildList f (n-1) ++ [f (n-1)] 
