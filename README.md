@@ -21,10 +21,10 @@ The type signature for `addToAll` would be `addToAll :: [Int] -> Int -> [Int]`, 
     add x y = x + y
 ```
 
-It makes sense in some languages for addition (add) to be defined for numerical or integer values. We can then enforce what is called a <strong>class constraint</strong>, like so:
+It makes sense in some languages for addition (add) to be defined for numerical values. We can then enforce what is called a <strong>class constraint</strong>, like so:
 
 ```Haskell
-    add :: (Integral a) => a -> a -> a
+    add :: (Num a) => a -> a -> a
     add x y = x + y    
 ```
 
