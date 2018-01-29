@@ -6,13 +6,13 @@ draw upon my experience with Racket, and some of the code written here will be t
 
 ## Type Signatures
 
-1. <strong>Currying:</strong> Haskell requires that the type signatures for multi-parameter functions are curried. What this basically means in simple terms is that a partial application is iterated until the multi-paramter function effectively becomes a single paramter function. An example is below:
+1. <strong>Currying:</strong> Haskell requires that the type signatures for multi-parameter functions are curried. What this basically means in simple terms is that a partial application is applied until the multi-parameter function effectively becomes a single parameter function. An example is below:
 
 ```Haskell
     addToAll [] n = 0
     addToAll (x:xs) n = (x + n) : addToAll xs n
 ```
-The type signature for `addToAll` would be `addToAll :: [Int] -> Int -> [Int]`, equivalent to stating: first plug in the value for `[Int]`, then plug in what you want to add to each `[Int]`, then produce a new list, `[Int]`
+The type signature for `addToAll` would be `addToAll :: [Int] -> Int -> [Int]`, equivalent to stating: first plug in the value for `[Int]`, then plug in what you want to add to each: `[Int]`, then produce the new list: `[Int]`
 
 ## Lists
 Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (cons 2 (cons 3 empty)))` or `(list 1 2 3)` in LISP and LISP-like languages. Below is some useful syntax:
