@@ -31,3 +31,17 @@ Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (con
         prod (x:xs) = x * prod xs
     ```
     will not compile if I specify the type signature of `prod` to be `[x] -> x`, but will compile when I specify the type signature to be `[Int] -> Int`. Why is this the case? Is `x` not a more general term for a type? Does `ghci` prefer if one is as specific as possible with types?
+
+## Glossary
+
+* <strong>λ-abstraction</strong>: this is another term for an anonymous function, i.e. a lambda function. For those new to functional programming/higher order functions, take a look below:
+
+```Haskell
+    addThree :: Int -> Int
+    addThree n = n + 3
+
+    map addThree [1..10]    
+    map (\x -> x + 3) [1..10]
+```
+
+The two calls to `map` produce the same result, but the second call made use of a λ-abstraction. Notice that there is no need to define the function which is passed in as argument to map, in the case of this λ-abstraction. 
