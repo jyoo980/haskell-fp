@@ -32,6 +32,8 @@ Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (con
         prod (x:xs) = x * prod xs
     ```
     will not compile if I specify the type signature of `prod` to be `[x] -> x`, but will compile when I specify the type signature to be `[Int] -> Int`. Why is this the case? Is `x` not a more general term for a type? Does `ghci` prefer if one is as specific as possible with types?
+    
+2. <strong>Duplicate type signatures</strong>: in `abstracts.hs`, I have noticed that `ghci` complains about duplicate type signatures, specifically for `myFoldr` and `myFoldl`, this is interesting, since it does not seem to complain for other ones...
 
 ## Glossary
 
