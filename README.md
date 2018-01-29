@@ -56,8 +56,11 @@ The two calls to `map` produce the same result, but the second call made use of 
 
 The second line of the code above is where the β-reduction occured, where all occurances of `x` were replaced with the value `4`, reducing the expression.
 
-* <strong>η-conversion</strong>: η-conversion (eta-conversion is where the addition or removal of an abstraction occurs in a function. This is often used to eliminate redundant λ-abstraction. Take the following for example:
+* <strong>η-conversion</strong>: η-conversion (eta-conversion) is where the addition or removal of an abstraction occurs in a function. This is often used to eliminate redundant λ-abstraction. Take the following for example:
 
 ```Haskell
-    
+    map (\x -> x) [1..10]
+    map id [1..10]
 ```
+
+The conversion of the λ-abstraction into an equivalent function is an example of η-reduction, while moving from `id` to `(\x -> x)` would be an example of `η-abstraction`.
