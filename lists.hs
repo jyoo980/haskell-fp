@@ -61,5 +61,9 @@ lastElem (x:xs) =
     then x
     else lastElem xs
 
+{- Design a function which computes the average of a list of numbers -}
+
+
+
 main :: IO()
 main =  putStrLn "_"
