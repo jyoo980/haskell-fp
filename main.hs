@@ -8,6 +8,5 @@ factorial :: Int -> Int
 factorial n | n == 0 = 1
             | otherwise = factorial(n-1) * n
 
-            
 main :: IO()
 main = putStrLn "_"

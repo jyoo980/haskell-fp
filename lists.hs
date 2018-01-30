@@ -57,13 +57,9 @@ flatten' (x:xs) = x ++ flatten' xs
 lastElem :: (Num x) => [x] -> x
 lastElem [] = error "List is empty"
 lastElem (x:xs) =
-  if xs == []
+  if null xs
     then x
     else lastElem xs
-
-{- Design a function which computes the average of a list of numbers -}
-
-
 
 main :: IO()
 main =  putStrLn "_"
