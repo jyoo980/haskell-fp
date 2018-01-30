@@ -69,6 +69,11 @@ maximum' (x:xs)
   | x > maxTail = x
   | otherwise = maxTail
   where maxTail = maximum' xs
+  
+{- Design a function which zips two lists together, each element should be a pair -}
+zip' [] _ = []
+zip' _ [] = []
+zip' (x:xs) (y:ys) = (x, y) : zip' xs ys
 
 main :: IO()
 main =  putStrLn "_"
