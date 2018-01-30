@@ -60,6 +60,15 @@ lastElem (x:xs) =
   if null xs
     then x
     else lastElem xs
+    
+{- Design a function which produces the maximum of a list -}
+maximum' :: (Ord a) => [a] -> a
+maximum' [] = error "Empty list, no maximum"
+maximum' [x] = x
+maximum' (x:xs)
+  | x > maxTail = x
+  | otherwise = maxTail
+  where maxTail = maximum' xs
 
 main :: IO()
 main =  putStrLn "_"
