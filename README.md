@@ -14,7 +14,7 @@ draw upon my experience with Racket, and some of the code written here will be t
 ```
 The type signature for `addToAll` would be `addToAll :: [Int] -> Int -> [Int]`, equivalent to stating: first plug in the value for `[Int]`, then plug in what you want to add to each: `Int`, then produce the new list: `[Int]`
 
-2. <strong>Class constraints</strong>: Take the following type signature for a function: `Int -> Int -> Int`. A possible function which matches this type signature could be the following:
+2. <strong>Type constraints</strong>: Take the following type signature for a function: `Int -> Int -> Int`. A possible function which matches this type signature could be the following:
 
 ```Haskell
     add :: Int -> Int -> Int
