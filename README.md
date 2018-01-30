@@ -21,7 +21,7 @@ The type signature for `addToAll` would be `addToAll :: [Int] -> Int -> [Int]`, 
     add x y = x + y
 ```
 
-It makes sense in some languages for addition (add) to be defined for numerical values. We can then enforce what is called a <strong>class constraint</strong>, like so:
+It makes sense in some languages for addition (add) to be defined for numerical values. We can then enforce what is called a <strong>type constraint</strong>, like so:
 
 ```Haskell
     add :: (Num a) => a -> a -> a
@@ -35,7 +35,7 @@ This ensures that each instance of `a` will be considered to be constrained to t
     quickSortGeneric :: (Ord x) => [x] -> [x]
 ```
 
-As the names state, the second implementation of `quickSort` is a more generic implementation which may be applied to data other than `Int`.
+As the names state, the second implementation of `quickSort` is a more generic implementation which may be applied to data other than `Int`. Whenever a function signature includes a type constraint, we consider it to be a <i>polymorphic function</i>.
 
 ## Lists
 Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (cons 2 (cons 3 empty)))` or `(list 1 2 3)` in LISP and LISP-like languages. Below is some useful syntax:
