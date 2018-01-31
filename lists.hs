@@ -56,7 +56,6 @@ flatten' (x:xs) = x ++ flatten' xs
 {- Design a function which produces the last element of a list of integers -}
 lastElem :: (Num x) => [x] -> x
 lastElem [] = error "List is empty"
-<<<<<<< HEAD
 lastElem (x:xs) 
   | null xs = x
   | otherwise = lastElem xs
@@ -73,7 +72,6 @@ addTwo num = num + 2
 compMap :: (Num x) => [x] -> [Bool]
 compMap [] = []
 compMap (_:xs) = map (numToBool . addTwo) xs
-=======
 lastElem (x:xs) =
   if null xs
     then x
@@ -92,7 +90,6 @@ maximum' (x:xs)
 zip' [] _ = []
 zip' _ [] = []
 zip' (x:xs) (y:ys) = (x, y) : zip' xs ys
->>>>>>> 227461cfe2375a43450c1df28a4ed370f6a44f8b
 
 main :: IO()
 main =  putStrLn "_"

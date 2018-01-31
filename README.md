@@ -90,11 +90,9 @@ The second line of the code above is where the β-reduction occured, where all o
 
 The conversion of the λ-abstraction into an equivalent function is an example of η-reduction, while moving from `id` to `(\x -> x)` would be an example of η-abstraction.
 
-<<<<<<< HEAD
 * <strong>`foldl1/foldr1`</strong>: these are identical to `foldl` and `foldr`, but there is no need to pass them a starting value; they assume that the first element (`foldl1`) or the last element (`foldr1`) are the starting values and start the fold. 
-=======
+
 * <strong>Type class</strong>: think of this as an interface which specifies behaviour specific to the type class. Some examples of commonly used type classes are below:
     * `Num`: consists of `Int`, `Integer`, `Float`, `Double`, `Fractional`, etc... One can think of `Num` as the type class containing          all numerical types.
     * `Eq`: provides an interface for testing for equality, includes `Num`. Interesting: `:t (==)` will produce                                `(==) :: (Eq a) => a -> a -> Bool`. This means the equality operator, `==` belongs to the type class `Eq`.
     * `Ord`: describes types which can be ordered, commonly seen as type constraints to polymorphic sorting algorithms.
->>>>>>> 227461cfe2375a43450c1df28a4ed370f6a44f8b
