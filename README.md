@@ -4,6 +4,13 @@ This repository documents my experiments with pure functional programming in Has
 by any means, so this repository will likely be riddled with mistakes, faux pas, etc... apologizes in advance. I will 
 draw upon my experience with Racket, and some of the code written here will be translations from UBC's CPSC 110. 
 
+## Table of Contents
+
+1. [Type Signatures](#type-signatures)
+2. [Lists](#lists)
+3. [Questions](#questions-to-address)
+4. [Glossary](#glossary)
+
 ## Type Signatures
 
 1. <strong>Currying:</strong> Haskell requires that the type signatures for multi-parameter functions are curried. What this basically means in simple terms is that a partial application is applied until the multi-parameter function effectively becomes a single parameter function. An example is below:
