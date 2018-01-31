@@ -25,3 +25,7 @@ orMap :: (x -> Bool) -> [x] -> Bool
 orMap _ [] = False
 orMap pred (x:xs) = 
     pred x || orMap pred xs
+    
+buildMap :: (Int -> x) -> Int -> [x]
+buildMap _ 0 = []
+buildMap f n = buildMap f (n - 1) ++ [f (n - 1)]

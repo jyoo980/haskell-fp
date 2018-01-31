@@ -14,14 +14,14 @@ draw upon my experience with Racket, and some of the code written here will be t
 ```
 The type signature for `addToAll` would be `addToAll :: [Int] -> Int -> [Int]`, equivalent to stating: first plug in the value for `[Int]`, then plug in what you want to add to each: `Int`, then produce the new list: `[Int]`
 
-2. <strong>Class constraints</strong>: Take the following type signature for a function: `Int -> Int -> Int`. A possible function which matches this type signature could be the following:
+2. <strong>Type constraints</strong>: Take the following type signature for a function: `Int -> Int -> Int`. A possible function which matches this type signature could be the following:
 
 ```Haskell
     add :: Int -> Int -> Int
     add x y = x + y
 ```
 
-It makes sense in some languages for addition (add) to be defined for numerical values. We can then enforce what is called a <strong>class constraint</strong>, like so:
+It makes sense in some languages for addition (add) to be defined for numerical values. We can then enforce what is called a <strong>type constraint</strong>, like so:
 
 ```Haskell
     add :: (Num a) => a -> a -> a
@@ -35,7 +35,7 @@ This ensures that each instance of `a` will be considered to be constrained to t
     quickSortGeneric :: (Ord x) => [x] -> [x]
 ```
 
-As the names state, the second implementation of `quickSort` is a more generic implementation which may be applied to data other than `Int`.
+As the names state, the second implementation of `quickSort` is a more generic implementation which may be applied to data other than `Int`. Whenever a function signature includes a type constraint, we consider it to be a <i>polymorphic function</i>.
 
 ## Lists
 Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (cons 2 (cons 3 empty)))` or `(list 1 2 3)` in LISP and LISP-like languages. Below is some useful syntax:
@@ -90,4 +90,11 @@ The second line of the code above is where the β-reduction occured, where all o
 
 The conversion of the λ-abstraction into an equivalent function is an example of η-reduction, while moving from `id` to `(\x -> x)` would be an example of η-abstraction.
 
+<<<<<<< HEAD
 * <strong>`foldl1/foldr1`</strong>: these are identical to `foldl` and `foldr`, but there is no need to pass them a starting value; they assume that the first element (`foldl1`) or the last element (`foldr1`) are the starting values and start the fold. 
+=======
+* <strong>Type class</strong>: think of this as an interface which specifies behaviour specific to the type class. Some examples of commonly used type classes are below:
+    * `Num`: consists of `Int`, `Integer`, `Float`, `Double`, `Fractional`, etc... One can think of `Num` as the type class containing          all numerical types.
+    * `Eq`: provides an interface for testing for equality, includes `Num`. Interesting: `:t (==)` will produce                                `(==) :: (Eq a) => a -> a -> Bool`. This means the equality operator, `==` belongs to the type class `Eq`.
+    * `Ord`: describes types which can be ordered, commonly seen as type constraints to polymorphic sorting algorithms.
+>>>>>>> 227461cfe2375a43450c1df28a4ed370f6a44f8b
