@@ -47,6 +47,24 @@ As the names state, the second implementation of `quickSort` is a more generic i
 
 ## Function Application and Currying
 
+### Function Application
+Expression evaluation follows the standard order of precendence seen in mathematics, BEDMAS, PEMDAS, etc... There are often times when one wants to specify the order of operations. Take the following for example:
+
+```Haskell
+    square :: (Num a) => a -> a
+    square x = x * x
+
+    square 3 + 4 + 5
+    square (3 + 4 + 5)
+```
+The calls to `square` will produce different values. We can replace the use of rounded brackets with the `$` operator (func application). Thus, the following becomes the case:
+
+```Haskell
+    square (3 + 4 + 5) == square $ 3 + 4 + 5
+```
+
+Everything to the <i>right</i> of the `$` operator gains precendence. 
+
 ## Lists
 Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (cons 2 (cons 3 empty)))` or `(list 1 2 3)` in LISP and LISP-like languages. Below is some useful syntax:
 
