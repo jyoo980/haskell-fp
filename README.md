@@ -7,9 +7,10 @@ draw upon my experience with Racket, and some of the code written here will be t
 ## Table of Contents
 
 1. [Type Signatures](#type-signatures)
-2. [Lists](#lists)
-3. [Questions](#questions-to-address)
-4. [Glossary](#glossary)
+2. [Function Application and Currying](#function-application-and-currying)
+3. [Lists](#lists)
+4. [Questions](#questions-to-address)
+5. [Glossary](#glossary)
 
 ## Type Signatures
 
@@ -43,6 +44,8 @@ This ensures that each instance of `a` will be considered to be constrained to t
 ```
 
 As the names state, the second implementation of `quickSort` is a more generic implementation which may be applied to data other than `Int`. Whenever a function signature includes a type constraint, we consider it to be a <i>polymorphic function</i>.
+
+## Function Application and Currying
 
 ## Lists
 Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (cons 2 (cons 3 empty)))` or `(list 1 2 3)` in LISP and LISP-like languages. Below is some useful syntax:
