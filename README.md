@@ -72,6 +72,23 @@ Everything to the <i>right</i> of the `$` operator gains precendence. The benefi
 
 The two functions above will produce the same value. 
 
+### Currying and Partial Applications (in detail)
+
+Technically, every function in Haskell is a single-parameter function. One may think that this is an absolutely incorrect statement, we've seen functions like the one defined below:
+
+```Haskell
+    foo :: (Num a) => a -> a -> a 
+    foo x y = x + y
+```
+What is happening behind the scenes is the following:
+
+```Haskell
+    let bar = foo 1
+    let baz = bar 2    
+```
+
+This functional call was equivalent to calling: `foo 1 2`. This partial application allows greater flexibility in leveraging first-class functions. 
+
 ## Lists
 Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (cons 2 (cons 3 empty)))` or `(list 1 2 3)` in LISP and LISP-like languages. Below is some useful syntax:
 
