@@ -63,7 +63,14 @@ The calls to `square` will produce different values. We can replace the use of r
     square (3 + 4 + 5) == square $ 3 + 4 + 5
 ```
 
-Everything to the <i>right</i> of the `$` operator gains precendence. 
+Everything to the <i>right</i> of the `$` operator gains precendence. The benefits of this operator become more readily apparent with the composition of first-order functions, like so:
+
+```Haskell
+    sum (filter (\x -> x `mod` 2 == 0) (map id [1..10]))
+    sum $ filter (\x -> x `mod` 2 == 0) $ map id [1..10]
+```
+
+The two functions above will produce the same value. 
 
 ## Lists
 Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (cons 2 (cons 3 empty)))` or `(list 1 2 3)` in LISP and LISP-like languages. Below is some useful syntax:
