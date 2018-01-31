@@ -56,10 +56,22 @@ flatten' (x:xs) = x ++ flatten' xs
 {- Design a function which produces the last element of a list of integers -}
 lastElem :: (Num x) => [x] -> x
 lastElem [] = error "List is empty"
-lastElem (x:xs) =
-  if null xs
-    then x
-    else lastElem xs
+lastElem (x:xs) 
+  | null xs = x
+  | otherwise = lastElem xs
+
+{- Design a function which adds 2 to each number, then maps even to True, and odd to False -}
+numToBool :: Int -> Bool
+numToBool num 
+  | num `mod` 2 == 0 = True
+  | otherwise = False
+
+addTwo :: (Num x) => x -> x
+addTwo num = num + 2
+
+compMap :: (Num x) => [x] -> [Bool]
+compMap [] = []
+compMap (_:xs) = map (numToBool . addTwo) xs
 
 main :: IO()
 main =  putStrLn "_"

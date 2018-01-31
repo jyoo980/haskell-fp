@@ -89,3 +89,5 @@ The second line of the code above is where the β-reduction occured, where all o
 ```
 
 The conversion of the λ-abstraction into an equivalent function is an example of η-reduction, while moving from `id` to `(\x -> x)` would be an example of η-abstraction.
+
+* <strong>`foldl1/foldr1`</strong>: these are identical to `foldl` and `foldr`, but there is no need to pass them a starting value; they assume that the first element (`foldl1`) or the last element (`foldr1`) are the starting values and start the fold. 
