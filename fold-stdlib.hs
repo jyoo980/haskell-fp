@@ -8,3 +8,6 @@ filter' p = foldr (\x acc -> if p x then x : acc else acc) []
 
 head' :: [a] -> a
 head' = foldr1 (\x _ -> x)
+
+tail' :: [a] -> a
+tail' = foldr1 (\_ acc -> acc)
