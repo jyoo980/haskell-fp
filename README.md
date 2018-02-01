@@ -101,6 +101,11 @@ Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (con
 
 ## Polymorphism
 
+If I am being totally honest, I thought polymorphism was something that existed in the realm of object-oriented programming, but like many things, it turned out I was completely mistaken. Haskell supports parametric and ad-hoc polymorphism.
+
+### Parametric Polymorphism
+
+
 ## Questions to address
 
 1. I've noticed that the following code
