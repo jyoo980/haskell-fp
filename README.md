@@ -105,6 +105,13 @@ If I am being totally honest, I thought polymorphism was something that existed 
 
 ### Parametric Polymorphism
 
+In this subsection, I will refer to functions defined in `parametric.hs`. Notice that `intMap` is a map over the type `Int`, while `paraMap` allows for a map over type `x`. Let's look at the signature of `paraMap` in more detail:
+
+```Haskell
+    paraMap :: (x -> y) -> [x] -> [y]
+```
+
+Notice that the type variables `x` and `y` are NOT constrained in any way, i.e. they do not appear to the left of `=>`. Hence, `paraMap` was written using parametric polymorphism. A function written using parametric polymorphism will accept parameters of any <strong>legal</strong> type, and operate the same way for each of those types. This is a characteristic called "parametricity".
 
 ## Questions to address
 
