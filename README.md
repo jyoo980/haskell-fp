@@ -111,7 +111,11 @@ In this subsection, I will refer to functions defined in `parametric.hs`. Notice
     paraMap :: (x -> y) -> [x] -> [y]
 ```
 
-Notice that the type variables `x` and `y` are NOT constrained in any way, i.e. they do not appear to the left of `=>`. Hence, `paraMap` was written using parametric polymorphism. A function written using parametric polymorphism will accept parameters of any <strong>legal</strong> type, and operate the same way for each of those types. This is a characteristic called "parametricity".
+Notice that the type variables `x` and `y` are <strong>not</strong> constrained in any way, i.e. they do not appear to the left of `=>`. Hence, `paraMap` was written using parametric polymorphism. A function written using parametric polymorphism will accept parameters of any <strong>legal</strong> type, and operate the same way for each of those types. This is a characteristic called "parametricity".
+
+### Ad-hoc Polymorphism
+
+TODO
 
 ## Questions to address
 
