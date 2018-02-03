@@ -99,7 +99,7 @@ Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (con
 * Commonly seen: `xs` for a function with signature e.g. `[x] -> Int`, can take it to read as the plural of `x`
 * `++` is equivalent to LISP `append`
 
-## List Comprehensions
+### List Comprehensions
 
 List comprehensions are an extremely useful way to generate lists of useful values. For example, we could generate a list of even numbers with the following function:
 
@@ -116,7 +116,21 @@ The code above is practically the most inelegant way one could generate a list o
 ```Haskell
     printEvens :: Int -> [Int]
     printEvens n =
-        filter (\x -> x `mod` 2 == 0) [1..n] 
+        filter (\x -> x `mod` 2 == 0) [1..n]
+```
+
+Better, but we can do more:
+
+```Haskell
+    printEvens :: Int -> Int
+    printEvens n = [x | x <- [1..n], x `mod` 2 == 0]
+```
+
+This last example utilized list comprehensions. Specifically, where it was written: 
+`[x | x <- [1..n], x mod 2 == 0]`. This is highly analogous to set-builder notation in mathematics. It is easy to read: "the set of x such that x belongs to the set [1..10] and x mod 2 equal 0". The general structure of a list comprehension is as follows:
+
+```Haskell
+    [x | {bounds of x}, {prediate for x in this set}]
 ```
 
 ## Polymorphism
