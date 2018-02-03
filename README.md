@@ -9,6 +9,7 @@ draw upon my experience with Racket, and some of the code written here will be t
 1. [Type Signatures](#type-signatures)
 2. [Function Application and Currying](#function-application-and-currying)
 3. [Lists](#lists)
+4. [Fixity](#fixity)
 5. [Polymorphism](#polymorphism)
 6. [Questions](#questions-to-address)
 7. [Glossary](#glossary)
@@ -132,6 +133,20 @@ This last example utilized list comprehensions. Specifically, where it was writt
 ```Haskell
     [x | {bounds of x}, {prediate for x in this set}]
 ```
+# Fixity
+
+We sometimes want to declare our own operators, e.g. `:-:` for our custom `List` type in `types`. We will then have to specify the fixity of the operator. Note the following:
+
+* `(*)` has fixity: `infixl 7`
+* `(+)` has fixity: `infixl 6`
+
+infix<strong>r</strong> and infix<strong>l</strong> differ in terms of right and left associativity. The ordinals `7` and `5` refer to how tightly the operator binds, so:
+
+```Haskell
+    4 * 5 + 2 ----> (4 * 5) + 2 
+``` 
+
+ The binding above of multiplication preceeding addition occurs due to `(*)` having `infixl 7` while `(+)` having `infixl 6`.
 
 ## Polymorphism
 
