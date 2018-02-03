@@ -138,6 +138,8 @@ The result of the `+` operator is therefore dependent on the types it operates o
     
 2. <strong>Duplicate type signatures</strong>: in `abstracts.hs`, I have noticed that `ghci` complains about duplicate type signatures, specifically for `myFoldr` and `myFoldl`, this is interesting, since it does not seem to complain for other ones...
 
+3. <strong>Do overloaded operators lack parametricity?</strong>: e.g. `+` in Python/Java. 
+
 ## Glossary
 
 * <strong>λ-abstraction</strong>: this is another term for an anonymous function, i.e. a lambda function. For those new to functional programming/higher order functions, take a look below:
