@@ -68,15 +68,7 @@ numToBool num
 
 addTwo :: (Num x) => x -> x
 addTwo num = num + 2
-
-compMap :: (Num x) => [x] -> [Bool]
-compMap [] = []
-compMap (_:xs) = map (numToBool . addTwo) xs
-lastElem (x:xs) =
-  if null xs
-    then x
-    else lastElem xs
-    
+   
 {- Design a function which produces the maximum of a list -}
 maximum' :: (Ord a) => [a] -> a
 maximum' [] = error "Empty list, no maximum"
@@ -90,6 +82,11 @@ maximum' (x:xs)
 zip' [] _ = []
 zip' _ [] = []
 zip' (x:xs) (y:ys) = (x, y) : zip' xs ys
+
+foo :: Int -> [Int]
+foo 0 = []
+foo n =
+  n : foo (n - 1)
 
 main :: IO()
 main =  putStrLn "_"
