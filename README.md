@@ -99,6 +99,26 @@ Lists in Haskell appear like so: `[1, 2, 3]`. This is exactly like `(cons 1 (con
 * Commonly seen: `xs` for a function with signature e.g. `[x] -> Int`, can take it to read as the plural of `x`
 * `++` is equivalent to LISP `append`
 
+## List Comprehensions
+
+List comprehensions are an extremely useful way to generate lists of useful values. For example, we could generate a list of even numbers with the following function:
+
+```Haskell
+    printEvens :: Int -> [Int]
+    printEvens 0 = []
+    printEvens n
+        | n `mod` 2 == 0 = printEvens (n-1) ++ [n] 
+        | otherwise = printEvens (n-1)
+```
+
+The code above is practically the most inelegant way one could generate a list of even numbers in Haskell. Here's a version using `filter`
+
+```Haskell
+    printEvens :: Int -> [Int]
+    printEvens n =
+        filter (\x -> x `mod` 2 == 0) [1..n] 
+```
+
 ## Polymorphism
 
 If I am being totally honest, I thought polymorphism was something that existed in the realm of object-oriented programming, but like many things, it turned out I was completely mistaken. Haskell supports parametric and ad-hoc polymorphism.
