@@ -14,3 +14,15 @@ paraMap' f (x:xs) = f x : paraMap' f xs
 
   A function call like: intMap (\x -> length x) ["Alice", "Bob", "John"] will fail
 -}
+
+intQSort :: [Int] -> [Int]
+intQSort [] = []
+intQSort (x:xs) = intQSort (filter (<x) xs)
+                  ++ [x] ++
+                  intQSort (filter (>x) xs)
+
+polyQSort :: (Ord a) => [a] -> [a]
+polyQSort [] = []
+polyQSort (x:xs) = polyQSort (filter (<x) xs)
+                   ++ [x] ++
+                   polyQSort (filter (>x) xs)

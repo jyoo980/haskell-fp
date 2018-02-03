@@ -115,7 +115,16 @@ Notice that the type variables `x` and `y` are <strong>not</strong> constrained 
 
 ### Ad-hoc Polymorphism
 
-TODO
+Ad-hoc polymorphism is a case of polymorphism where a value is produced with respect to the values used to produce it. This may sound confusing, but an example can be the `+` operator in languages such as Python or Java. For example, both usages are valid:
+
+```Python
+    > 5 + 3
+    8
+    > "John" + "Smith"
+    "JohnSmith"
+```
+
+The result of the `+` operator is therefore dependent on the types it operates on. Consequently, it lacks parmetricity. 
 
 ## Questions to address
 
