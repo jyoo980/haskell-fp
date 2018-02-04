@@ -15,5 +15,8 @@ inOrder (Branch left right) =
         The type of fmap' does not contain any concrete types, i.e. Int, Bool, String, etc... this is  
         a huge difference that we are not introduce to. 
 -}
+
 class Functor' f where
     fmap' :: (a -> b) -> f a -> f b 
+
+-- fmap' takes a function going from a to b, a functor f applied to type b, and produces a functor f on b
