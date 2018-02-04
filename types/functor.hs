@@ -20,3 +20,6 @@ class Functor' f where
     fmap' :: (a -> b) -> f a -> f b 
 
 -- fmap' takes a function going from a to b, a functor f applied to type b, and produces a functor f on b
+
+instance Functor' [] where
+    fmap' = map
