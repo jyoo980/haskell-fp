@@ -21,3 +21,9 @@ isPresent x (Node a left right)
     | x == a = True
     | x < a = isPresent x left
     | x > a = isPresent x right
+
+-- Counting nodes in a BST
+countNodes :: Tree a -> Int 
+countNodes EmptyTree = 0
+countNodes (Node a left right) =
+    1 + countNodes left + countNodes right
