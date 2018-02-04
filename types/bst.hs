@@ -27,3 +27,9 @@ countNodes :: Tree a -> Int
 countNodes EmptyTree = 0
 countNodes (Node a left right) =
     1 + countNodes left + countNodes right
+
+-- Produce inorder traversal list of BST
+inOrder :: Tree a -> [a]
+inOrder EmptyTree = []
+inOrder (Node a left right) = 
+    inOrder left ++ [a] ++ inOrder right
