@@ -39,3 +39,9 @@ postOrder :: Tree a -> [a]
 postOrder EmptyTree = []
 postOrder (Node a left right) =
     postOrder left ++ postOrder right ++ [a]
+
+-- Produce preorder traversal list of BST
+preOrder :: Tree a -> [a]
+preOrder EmptyTree = []
+preOrder (Node a left right) =
+    [a] ++ preOrder left ++ preOrder right
