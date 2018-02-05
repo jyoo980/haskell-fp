@@ -27,5 +27,5 @@ mergeSort :: (Ord a) => [a] -> [a]
 mergeSort [] = []
 mergeSort [x] = [x]
 mergeSort xs =
-    merge (mergeSort(fstHalf(xs))) (mergeSort(sndHalf(xs)))
+    merge mergeSort(fstHalf xs) mergeSort(sndHalf xs)
 -- Mergesort (end)
