@@ -148,7 +148,7 @@ infix<strong>r</strong> and infix<strong>l</strong> differ in terms of right and
 
  The binding above of multiplication preceeding addition occurs due to `(*)` having `infixl 7` while `(+)` having `infixl 6`.
 
-## Polymorphism
+# Polymorphism
 
 If I am being totally honest, I thought polymorphism was something that existed in the realm of object-oriented programming, but like many things, it turned out I was completely mistaken. Haskell supports parametric and ad-hoc polymorphism.
 
