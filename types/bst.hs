@@ -33,3 +33,9 @@ inOrder :: Tree a -> [a]
 inOrder EmptyTree = []
 inOrder (Node a left right) = 
     inOrder left ++ [a] ++ inOrder right
+
+-- Produce postorder traversal list of BST
+postOrder :: Tree a -> [a]
+postOrder EmptyTree = []
+postOrder (Node a left right) =
+    postOrder left ++ postOrder right ++ [a]
