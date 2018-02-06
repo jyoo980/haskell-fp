@@ -32,3 +32,13 @@ squareNum x = x * x
 -- We previously said that a functor is for things which may be "mapped" over. We can interpret the squareNum 
 -- function as the "infinite set of all numbers that squareNum can produce"
 
+-- Here we'll see how a Tree type is also a functor
+
+data Tree a = EmptyTree | Node a (Tree a) (Tree a) deriving (Show, Eq)
+
+-- fmap for type Tree will be 
+-- fmap :: (a -> b) -> Tree a -> Tree b
+instance Functor' Tree where
+    fmap' f EmptyTree = EmptyTree
+    fmap' f (Node x leftChild rightChild) = 
+        Node (f x) (fmap' f leftChild) (fmap' f rightChild)
