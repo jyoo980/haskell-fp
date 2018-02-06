@@ -13,7 +13,7 @@ inOrder (Branch left right) =
     The Functor typeclass is for things which may be "mapped-over", e.g. the List typeclass is an example
     NOTE:
         The type of fmap' does not contain any concrete types, i.e. Int, Bool, String, etc... this is  
-        a huge difference that we are not introduce to. 
+        a huge difference that we are not introduced to. 
 -}
 
 class Functor' f where
@@ -23,3 +23,12 @@ class Functor' f where
 
 instance Functor' [] where
     fmap' = map
+
+-- Are functions functors?
+-- Let's take a look at the function below
+squareNum :: (Num a) => a -> a
+squareNum x = x * x
+
+-- We previously said that a functor is for things which may be "mapped" over. We can interpret the squareNum 
+-- function as the "infinite set of all numbers that squareNum can produce"
+
